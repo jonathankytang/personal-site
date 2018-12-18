@@ -1,0 +1,1128 @@
+/************************
+HTML AND BODY ATTRIBUTES
+************************/
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #FFF;
+}
+
+/***************
+SECTION DESIGNS
+***************/
+
+/*CSS [1]*/
+
+/*Index page header styling with parallax*/
+
+header#top-index {
+    background-image: url("images/backgrounds/bck.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*Index page menu bar styling */
+
+section#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #173140;
+    width: 100%;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    color: #FFF;
+    display: none;
+}
+
+/*Index page about section styling with parallax*/
+
+section#about {
+    background-color: #F2F2F2;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page philanthropy section styling with parallax*/
+
+section#philanthropy {
+    background-image: url("images/backgrounds/ucs.jpg");
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page projects section styling with parallax*/
+
+section#projects {
+    background-image: url("images/backgrounds/projects.jpg");
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page resources section styling with parallax*/
+
+section#resources {
+    background-image: url("images/backgrounds/resourcesHome.jpg");
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page cv section styling with parallax*/
+
+section#CV {
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page contact section styling with parallax*/
+
+section#contact {
+    background-color: #4B9BCB;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Index page footer styling with parallax*/
+
+footer#foot-index {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+/****************
+STYLING OF TEXTS
+****************/
+
+/*index h1 styling, initially hidden*/
+
+header#top-index h1 {
+    color: #FFF;
+    display: none;
+    font-family: 'Poppins', serif;
+    font-size: 58px;
+}
+
+/*all pages h2 styling*/
+
+h2 {
+    color: #11232E;
+    margin-top: 0;
+    font-family: 'Poppins', serif;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: .1em;
+}
+
+/*all pages h4 styling*/
+
+h4 {
+    color: #11232E;
+    font-family: 'Ubuntu', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*all pages h2 styling*/
+
+p {
+    color: #29546E;
+    font-family: 'Ubuntu', serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+/*text size responsiveness*/
+
+/*viewports > 360px, < 759px */
+
+@media (min-width: 360px) {
+    header#top-index h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    a#back-to-top {
+        font-size: 14px;
+    }
+
+}
+
+/*viewports > 760px, < 1023px */
+
+@media (min-width: 760px) {
+    header#top-index h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+/*viewports > 1024px */
+
+@media (min-width: 1024px) {
+    header#top-index h1 {
+        font-size: 58px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h4 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    a#back-to-top {
+        font-size: 20px;
+    }
+}
+
+/*viewports > 1440px */
+
+@media (min-width: 1440px) {
+    header#top-index h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    a#back-to-top {
+        font-size: 20px;
+    }
+}
+
+/*viewports > 1880px */
+
+@media (min-width: 1880px) {
+    header#top-index h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    h4 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    a#back-to-top {
+        font-size: 20px;
+    }
+}
+
+/***************************
+POSITION OF CONTENTS IN DIVS
+***************************/
+
+/*Position of content title in all pages header*/
+
+#head-content {
+    margin-top: -40px;
+    text-align: center;
+}
+
+/*Index about section content position and padding */
+
+#about-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Index philanthropy section content position and padding */
+
+#philanthropy-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Index projects section content position and padding */
+
+.projects-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Index resources section content position and padding */
+
+#resources-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Index cv section content position and padding */
+
+#cv-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*Index contact section content position and padding */
+
+#contact-content {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+/*All header titles position and padding*/
+
+header h1 {
+    padding-top: 250px;
+
+}
+
+/*text size responsiveness*/
+
+/*viewports > 360px, < 759px */
+
+@media (min-width: 360px) {
+    /*Index about section content position and padding */
+    #about-content {
+        padding-top: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*Index philanthropy section content position and padding */
+    #philanthropy-content {
+        padding-top: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*Index projects section content position and padding */
+    .projects-content {
+        padding-top: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*Index resources section content position and padding */
+    #resources-content {
+        padding-top: 120px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*Index cv section content position and padding */
+    #cv-content {
+        padding-top: 120px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /*Index contact section content position and padding */
+    #contact-content {
+        padding-top: 60px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/*viewports > 760px, < 1023px */
+
+@media (min-width: 760px) {
+    /*Index about section content position and padding */
+    #about-content {
+        padding-top: 90px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /*Index philanthropy section content position and padding */
+    #philanthropy-content {
+        padding-top: 90px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /*Index projects section content position and padding */
+    .projects-content {
+        padding-top: 40px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /*Index resources section content position and padding */
+    #resources-content {
+        padding-top: 120px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /*Index cv section content position and padding */
+    #cv-content {
+        padding-top: 120px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    /*Index contact section content position and padding */
+    #contact-content {
+        padding-top: 80px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/*viewports > 1024px */
+
+@media (min-width: 1024px) {
+    /*Index about section content position and padding */
+    #about-content {
+        padding-top: 100px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index philanthropy section content position and padding */
+    #philanthropy-content {
+        padding-top: 120px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index projects section content position and padding */
+    .projects-content {
+        padding-top: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index resources section content position and padding */
+    #resources-content {
+        padding-top: 120px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index cv section content position and padding */
+    #cv-content {
+        padding-top: 120px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index contact section content position and padding */
+    #contact-content {
+        padding-top: 100px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+/*viewports > 1440px */
+
+@media (min-width: 1440px) {
+
+    header h1 {
+        padding-top: 320px;
+
+    }
+
+    /*Index about section content position and padding */
+    #about-content {
+        padding-top: 180px;
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+
+    /*Index projects section content position and padding */
+    .projects-content {
+        padding-top: 80px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index philanthropy section content position and padding */
+    #philanthropy-content {
+        padding-top: 200px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index resources section content position and padding */
+    #resources-content {
+        padding-top: 200px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index cv section content position and padding */
+    #cv-content {
+        padding-top: 220px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index contact section content position and padding */
+    #contact-content {
+        padding-top: 180px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+/*viewports > 1880px */
+
+@media (min-width: 1880px) {
+    
+    header h1 {
+        padding-top: 320px;
+
+    }
+    
+    /*Index about section content position and padding */
+    #about-content {
+        padding-top: 200px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index philanthropy section content position and padding */
+    #philanthropy-content {
+        padding-top: 200px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index projects section content position and padding */
+    .projects-content {
+        padding-top: 100px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    /*Index resources section content position and padding */
+    #resources-content {
+        padding-top: 190px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index cv section content position and padding */
+    #cv-content {
+        padding-top: 220px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    /*Index contact section content position and padding */
+    #contact-content {
+        padding-top: 200px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
+
+/*****************
+SOCIAL MEDIA ICONS
+*****************/
+
+/*CSS[2]*/
+
+/*CSS[3]*/
+
+/*initial icon color on display*/
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*color when user hovers over icon*/
+
+.header-social-icons p > a:hover {
+    color: #D9D9D9;
+    text-decoration: underline;
+}
+
+/*All icons position, initally hidden*/
+
+.header-social-icons {
+    display: none;
+    text-align: center;
+/*    margin: 0 auto;*/
+}
+
+/*Initial colour of icon*/
+
+.social-icon {
+    color: #FFF;
+}
+
+/*Padding against other elements in section*/
+
+ul.social-icons {
+    margin-top: 10px;
+    left: 49%;
+}
+
+/*Position of icons in the "list"*/
+
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+
+/*Initial color of icon*/
+
+.social-icons a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/*Instagram padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-instagram {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Instagram icon background color when hovered*/
+
+.fa-instagram:hover {
+    background-color: #D93175;
+}
+
+/*Twitter padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-twitter {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Twitter icon background color when hovered*/
+
+.fa-twitter:hover {
+    background-color: #00ACED;
+}
+
+/*Email padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-envelope-o {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Email icon background color when hovered*/
+
+.fa-envelope-o:hover {
+    background-color: #E25714;
+}
+
+/*Spotify padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-spotify {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Spotify icon background color when hovered*/
+
+.fa-spotify:hover {
+    background-color: #1ED760;
+}
+
+/*Github padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-github {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Github icon background color when hovered*/
+
+.fa-github:hover {
+    background-color: #25292E;
+}
+
+/*Linkedin padding and transition when hovered for IE, firefox, chrome, safari and others */
+
+.fa-linkedin {
+    padding: 10px 14px;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+/*Linkedin icon background color when hovered*/
+
+.fa-linkedin:hover {
+    background-color: #0073A4;
+}
+
+/*****************
+SCROLL ANIMATIONS
+*****************/
+
+/*CSS[4]*/
+
+/*Index page scroll animation styling, position, padding, initially hidden*/
+
+.scroll-button h3 {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 49%;
+    z-index: 2;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    font: normal 400 20px/1 'Josefin Sans', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+}
+
+/*Index page scroll arrow styling, position, padding, initially hidden*/
+
+.scroll-button h3 span {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 49.5%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: anim 1.5s infinite;
+    animation: anim 1.5s infinite;
+    box-sizing: border-box;
+}
+
+/*Animation of arrow going downwards - Chrome, Safari*/
+
+@-webkit-keyframes anim {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+
+/*Animation of arrow going downwards - others*/
+
+@keyframes anim {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+
+/********
+MENU BAR
+********/
+
+/*CSS{5]*/
+
+/*Monogram position and padding*/
+
+#monogram {
+    float: left;
+    padding-left: 50px;
+    padding-top: 2px;
+}
+
+/*Menu bar styling, position, transition*/
+
+.side-nav {
+    font-family: 'Ubuntu', serif;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/*Menu bar links styling, position, transition*/
+
+.side-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/*Menu bar links hover state*/
+
+.side-nav a:hover {
+    color: #F1F1F1;
+}
+
+/*Menu bar close button styling and padding*/
+
+.side-nav .close-button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*Menu button styling and padding*/
+
+#menu-button {
+    font-family: 'Ubuntu', serif;
+    transition: margin-right .5s;
+    padding: 8px;
+    padding-right: 10px;
+}
+
+/*Menu button hover state*/
+
+#menu-button:hover {
+    color: #4B9BCB;
+}
+
+/*Menu button positioning*/
+
+#main span {
+    float: right;
+    padding-right: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/*Menu bar responsiveness*/
+
+/*viewports screen, <450px*/
+
+@media screen and (max-height: 450px) {
+    .side-nav {
+        padding-top: 15px;
+    }
+
+    .side-nav a {
+        font-size: 18px;
+    }
+}
+
+/*viewports screen, <760px*/
+
+@media screen and (max-width: 760px) {
+    #monogram {
+        padding-left: 20px;
+    }
+
+    #main {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .side-nav a {
+        font-size: 14px;
+    }
+
+    #main span {
+        font-size: 20px;
+    }
+}
+
+/******************
+BACK TO TOP BUTTON
+******************/
+
+/*Button styling, position, transition, shape*/
+
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    z-index: 9999;
+    right: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    color: #000;
+    cursor: pointer;
+    border-color: #f5f5f5;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+
+/*back to home button hover state*/
+
+#back-to-top:hover {
+    background: #173140;
+    color: white;
+}
+
+/*back to home button opacity when shown*/
+
+#back-to-top.show {
+    opacity: 1;
+}
+
+/*Button size responsiveness*/
+
+/*viewports <1023px*/
+
+@media (max-width: 1023px) {
+    #back-to-home {
+        width: 55px;
+        height: 55px;
+    }
+
+    #back-to-top {
+        width: 35px;
+        height: 55px;
+    }
+}
+
+/*viewports >1024px*/
+
+@media (min-width: 1024px) {
+    #back-to-home {
+        width: 70px;
+        height: 70px;
+    }
+
+    #back-to-top {
+        width: 50px;
+        height: 70px;
+    }
+}
+
+/******************
+LINK BUTTONS
+******************/
+
+/*CSS[7]*/
+
+/*Button position*/
+
+.wrapper-button {
+    text-align: center;
+}
+
+/*Button styling, padding, shape*/
+
+.content-button {
+    margin: 0 5px;
+    padding: 15px;
+    font-family: 'Ubuntu', serif;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid #181818;
+    color: #181818;
+    cursor: pointer;
+    letter-spacing: .1em;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/*Button hover state*/
+
+.content-button:hover {
+    background: #173140;
+    color: white;
+}
+
+/******************
+CONTACT ME FORM
+******************/
+
+/*Thank you message initial display state*/
+
+#thankyou_message {
+    display: none;
+}
+
+/*Invalid email initial display state*/
+
+#email-invalid {
+    display: none;
+}
+
+/*Input label styling*/
+
+label {
+    font-family: 'Ubuntu', serif;
+    font-size: 26px;
+    color: #1B384A;
+    width: 100%;
+}
+
+/*No border around each field*/
+
+fieldset {
+    border: none !important;
+}
+
+/*Styling and position of exemplar input*/
+
+::placeholder {
+    font-family: 'Raleway', serif;
+    text-align: center;
+}
+
+/*User input styling*/
+
+input {
+    font-family: 'Raleway', serif;
+    text-align: center;
+    font-size: 18px;
+    min-width: 28%;
+}
+
+/*User input styling*/
+
+textarea {
+    font-family: 'Raleway', serif;
+    text-align: center;
+    font-size: 18px;
+    min-width: 28%;
+} 
