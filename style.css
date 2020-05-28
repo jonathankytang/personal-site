@@ -142,7 +142,7 @@ STYLING OF TEXTS
 header#top-index h1 {
     color: #FFF;
     display: none;
-    font-family: 'Poppins', serif;
+    font-family: 'Ubuntu', serif;
     font-size: 58px;
 }
 
@@ -151,7 +151,7 @@ header#top-index h1 {
 h2 {
     color: #11232E;
     margin-top: 0;
-    font-family: 'Poppins', serif;
+    font-family: 'Ubuntu', serif;
     font-size: 36px;
     text-align: center;
     letter-spacing: .1em;
@@ -170,7 +170,7 @@ h4 {
 
 p {
     color: #29546E;
-    font-family: 'Ubuntu', serif;
+    font-family: 'Raleway', serif;
     font-size: 22px;
     text-align: center;
 }
