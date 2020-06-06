@@ -9,24 +9,24 @@ $(document).ready(function () {
 	if (!jQuery.browser.mobile) {
 		$("#dslop-img").on({
 			"mouseover" : function () {
-				this.src = "images/dslop2.jpg";
+				this.src = "assets/images/dslop2.jpg";
 			},
 			"mouseout" : function () {
-				this.src = "images/dslop1.jpg";
+				this.src = "assets/images/dslop1.jpg";
 			}
 		});
 
 		$("#eu28-img").on({
 			"mouseover" : function () {
-				this.src = "images/eu282.jpg";
+				this.src = "assets/images/eu282.jpg";
 			},
 			"mouseout" : function () {
-				this.src = "images/eu281.jpg";
+				this.src = "assets/images/eu281.jpg";
 			}
 		});
 	}
 	else {
-		$("#dslop-img").attr("src", "images/dslop2.jpg");
+		$("#dslop-img").attr("src", "assets/images/dslop2.jpg");
 		$(".bio").css("font-size", "16px");
 		$("body").css("font-size", "14px");
 		$("td").css("font-size", "14px");
