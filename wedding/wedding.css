@@ -1,0 +1,1087 @@
+/* ===================================================================
+   Sara & Jonathan — Cagliari, Sardinia
+   Palette drawn from the city: Castello limestone, Mediterranean
+   sea-green, Poetto sand. Warmth comes from the photography.
+   Everything scoped to .wedding-page.
+   =================================================================== */
+
+.wedding-page {
+  /* colour */
+  --wp-deep:      #0E2523;  /* deep sea — dark fields */
+  --wp-ink:       #16302E;  /* body text */
+  --wp-ink-soft:  rgba(22, 48, 46, .68);
+  --wp-paper:     #EFEDE6;  /* limestone — the page */
+  --wp-sand:      #E3DDCC;  /* alternate surface */
+  --wp-accent:    #26645E;  /* sea glass — links, marks */
+  --wp-accent-lt: #9FC9C0;  /* accent on dark */
+  --wp-line:      rgba(22, 48, 46, .16);
+  --wp-line-lt:   rgba(239, 237, 230, .22);
+
+  /* type */
+  --wp-display: 'Bodoni Moda', 'Didot', Georgia, serif;
+  --wp-body: 'Jost', 'Futura', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* layout */
+  --wp-rail: 13rem;
+  --wp-gap: 4.5rem;
+  --wp-measure: 40rem;
+  --wp-nav-h: 4.75rem;
+
+  background: var(--wp-paper);
+  color: var(--wp-ink);
+  font-family: var(--wp-body);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wedding-page *,
+.wedding-page *::before,
+.wedding-page *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wedding-page *,
+  .wedding-page *::before,
+  .wedding-page *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.wedding-page :focus-visible {
+  outline: 2px solid var(--wp-accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: .75rem 1.25rem;
+  background: var(--wp-deep);
+  color: var(--wp-paper);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* -------------------------------------------------------------
+   Type scale
+   ------------------------------------------------------------- */
+
+.wedding-page h1,
+.wedding-page h2,
+.wedding-page h3 {
+  font-family: var(--wp-display);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.wedding-page h2 {
+  font-size: clamp(2.1rem, 4.5vw, 2.9rem);
+  letter-spacing: -.015em;
+}
+
+.wedding-page h3 {
+  font-size: 1.5rem;
+  letter-spacing: -.01em;
+}
+
+.wedding-page p {
+  margin: 0 0 1.15em;
+  max-width: var(--wp-measure);
+}
+
+.wedding-page a {
+  color: var(--wp-accent);
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(38, 100, 94, .4);
+  transition: text-decoration-color .2s ease;
+}
+
+.wedding-page a:hover {
+  text-decoration-color: currentColor;
+}
+
+.lede {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* -------------------------------------------------------------
+   Navigation — transparent over the hero, solid once scrolled
+   ------------------------------------------------------------- */
+
+.wedding-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--wp-nav-h);
+  padding: 0 clamp(1.25rem, 4vw, 2.75rem);
+  color: var(--wp-paper);
+  transition: background .35s ease, color .35s ease, box-shadow .35s ease;
+}
+
+.wedding-nav.is-solid {
+  background: rgba(239, 237, 230, .92);
+  backdrop-filter: blur(10px);
+  color: var(--wp-ink);
+  box-shadow: 0 1px 0 var(--wp-line);
+}
+
+.nav-brand {
+  display: block;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.nav-brand-logo {
+  height: 2.6rem;
+  width: auto;
+  display: block;
+  transition: height .35s ease, filter .35s ease;
+  filter: brightness(0) invert(1);
+}
+
+.wedding-nav.is-solid .nav-brand-logo {
+  height: 2.2rem;
+  filter: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  padding: .35rem 0;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+  transition: border-color .2s ease, opacity .2s ease;
+  opacity: .85;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+.nav-links a.active {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+.nav-links a.nav-cta {
+  padding: .45rem 1.1rem;
+  border: 1px solid currentColor;
+  opacity: 1;
+}
+
+.nav-links a.nav-cta:hover {
+  background: currentColor;
+  border-bottom-color: currentColor;
+}
+
+.wedding-nav.is-solid .nav-links a.nav-cta:hover {
+  color: var(--wp-paper);
+}
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav-toggle::before,
+.nav-toggle::after,
+.nav-toggle-icon {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.35rem;
+  height: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.nav-toggle::before { transform: translate(-50%, calc(-50% - 6px)); }
+.nav-toggle::after  { transform: translate(-50%, calc(-50% + 6px)); }
+
+.nav-toggle.open .nav-toggle-icon { opacity: 0; }
+.nav-toggle.open::before { transform: translate(-50%, -50%) rotate(45deg); }
+.nav-toggle.open::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+@media (max-width: 820px) {
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .5rem 0 1rem;
+    background: var(--wp-paper);
+    color: var(--wp-ink);
+    box-shadow: 0 12px 24px rgba(14, 37, 35, .1);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: .9rem clamp(1.25rem, 4vw, 2.75rem);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--wp-line);
+  }
+
+  .nav-links a.nav-cta {
+    margin: .75rem clamp(1.25rem, 4vw, 2.75rem) 0;
+    border: 1px solid var(--wp-accent);
+    color: var(--wp-accent);
+    text-align: center;
+  }
+}
+
+/* -------------------------------------------------------------
+   Hero — a solid field of deep sea, carrying the names alone.
+   The photography follows immediately below.
+   ------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 72svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--wp-nav-h) + 3rem) 1.5rem 5rem;
+  background: var(--wp-deep);
+  color: var(--wp-paper);
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 46rem;
+}
+
+.wedding-page .hero-occasion {
+  max-width: none;
+  margin: 0 0 1.5rem;
+  font-family: var(--wp-body);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: .18em;
+  color: #EEF2F0;
+}
+
+.hero-names {
+  font-family: var(--wp-display);
+  font-weight: 400;
+  line-height: .95;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-name {
+  display: block;
+  /* font-size: clamp(3.4rem, 13vw, 8rem); */
+  font-size: clamp(2.8rem, 10vw, 6rem);
+  letter-spacing: -.02em;
+}
+
+.hero-amp {
+  display: block;
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  opacity: .8;
+  margin: -.1em 0;
+}
+
+.hero-meta {
+  margin: 2rem auto 0;
+  max-width: none;
+  font-size: .9rem;
+  font-weight: 300;
+  letter-spacing: .1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-rule {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: .5;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, transparent, rgba(239, 237, 230, .8));
+  transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  .hero-meta {
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
+
+/* -------------------------------------------------------------
+   Photo carousel — contained frame between the hero and Welcome.
+   Images are contained, not cropped, so portrait and landscape
+   shots both sit whole inside the frame.
+   ------------------------------------------------------------- */
+
+.photo-carousel {
+  position: relative;
+  width: min(90vw, 720px);
+  margin: clamp(3.5rem, 7vw, 5.5rem) auto 0;
+}
+
+.carousel-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--wp-sand);
+  box-shadow: 0 18px 40px -12px rgba(14, 37, 35, .28);
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+}
+
+.carousel-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  max-width: none;
+  padding: 2rem;
+  text-align: center;
+  font-size: .9rem;
+  color: var(--wp-ink-soft);
+}
+
+.carousel-empty[hidden] {
+  display: none;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(239, 237, 230, .6);
+  background: rgba(14, 37, 35, .38);
+  backdrop-filter: blur(4px);
+  color: var(--wp-paper);
+  cursor: pointer;
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(14, 37, 35, .68);
+  border-color: var(--wp-paper);
+}
+
+.carousel-arrow.left  { left: .85rem; }
+.carousel-arrow.right { right: .85rem; }
+
+.carousel-chevron {
+  width: .55rem;
+  height: .55rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.carousel-arrow.left .carousel-chevron {
+  transform: rotate(135deg);
+  margin-left: .18rem;
+}
+
+.carousel-arrow.right .carousel-chevron {
+  transform: rotate(-45deg);
+  margin-right: .18rem;
+}
+
+.carousel-count {
+  max-width: none;
+  margin: .85rem 0 0;
+  text-align: right;
+  font-size: .78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .08em;
+  color: var(--wp-ink-soft);
+}
+
+.carousel-count-sep {
+  opacity: .5;
+  margin: 0 .35rem;
+}
+
+@media (max-width: 680px) {
+  .photo-carousel {
+    width: min(92vw, 500px);
+  }
+
+  .carousel-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .carousel-arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/* -------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------- */
+
+.button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: .95rem 2.4rem;
+  font-family: var(--wp-body);
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: var(--wp-accent);
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+
+.button:hover {
+  background: var(--wp-accent);
+  color: var(--wp-paper);
+}
+
+.button-light {
+  color: var(--wp-paper);
+}
+
+.button-light:hover {
+  background: var(--wp-paper);
+  color: var(--wp-deep);
+}
+
+/* -------------------------------------------------------------
+   Sections — sticky heading rail, asymmetric content column
+   ------------------------------------------------------------- */
+
+.wp-section {
+  display: grid;
+  grid-template-columns: var(--wp-rail) minmax(0, 1fr);
+  gap: var(--wp-gap);
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: clamp(4.5rem, 9vw, 7.5rem) clamp(1.5rem, 5vw, 3rem);
+  scroll-margin-top: var(--wp-nav-h);
+}
+
+/* Full-bleed tinted band, with the inner column still aligned
+   to the 68rem grid used by the plain sections. */
+.wp-section-sand {
+  max-width: none;
+  background: var(--wp-sand);
+  padding-left: max(clamp(1.5rem, 5vw, 3rem), calc((100vw - 68rem) / 2 + clamp(1.5rem, 5vw, 3rem)));
+  padding-right: max(clamp(1.5rem, 5vw, 3rem), calc((100vw - 68rem) / 2 + clamp(1.5rem, 5vw, 3rem)));
+}
+
+.wp-rail {
+  position: sticky;
+  top: calc(var(--wp-nav-h) + 2rem);
+  align-self: start;
+}
+
+/* The mark is a flex item rather than an absolutely positioned
+   pseudo-element, so it stays centred on the text at every size
+   the clamped h2 resolves to. */
+.wp-rail h2 {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.wp-rail h2::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 3px;
+  height: .7em;
+  background: var(--wp-accent);
+}
+
+.wp-body > h3 {
+  margin: 2.75rem 0 .75rem;
+}
+
+.wp-body > h3:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 820px) {
+  .wp-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .wp-rail {
+    position: static;
+  }
+}
+
+/* -------------------------------------------------------------
+   Lists
+   ------------------------------------------------------------- */
+
+.marked-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  max-width: var(--wp-measure);
+}
+
+.marked-list li {
+  position: relative;
+  padding: .5rem 0 .5rem 1.5rem;
+  border-bottom: 1px solid var(--wp-line);
+}
+
+.marked-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.15em;
+  width: .45rem;
+  height: 1px;
+  background: var(--wp-accent);
+}
+
+.marked-list strong {
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------
+   Gallery — deliberately uneven, not a 3-up grid
+   ------------------------------------------------------------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: .75rem;
+  margin-top: 2.5rem;
+  height: 28rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: var(--wp-sand);
+}
+
+.gallery img:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 12rem 9rem;
+    height: auto;
+  }
+
+  .gallery img:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+/* -------------------------------------------------------------
+   Schedule
+   ------------------------------------------------------------- */
+
+.event {
+  padding: 2rem 0;
+  border-top: 1px solid var(--wp-line);
+}
+
+.event:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.event-date {
+  font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.event-detail {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: .4rem 1.5rem;
+  margin: 0 0 1.5rem;
+  max-width: var(--wp-measure);
+}
+
+.event-detail dt {
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  color: var(--wp-accent);
+}
+
+.event-detail dd {
+  margin: 0;
+}
+
+.event-note {
+  font-size: .97rem;
+  color: var(--wp-ink-soft);
+}
+
+.event-label {
+  display: block;
+  font-weight: 500;
+  color: var(--wp-ink);
+  letter-spacing: .02em;
+}
+
+@media (max-width: 480px) {
+  .event-detail {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: .3rem 1rem;
+  }
+}
+
+/* -------------------------------------------------------------
+   FAQ
+   ------------------------------------------------------------- */
+
+.faq-group {
+  margin-bottom: 2.75rem;
+}
+
+.faq-group h3 {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+  color: var(--wp-ink-soft);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--wp-line);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.05rem 0;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: var(--wp-body);
+  font-size: 1.02rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--wp-ink);
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--wp-accent);
+}
+
+.faq-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: .85rem;
+  height: .85rem;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--wp-accent);
+  transform: translate(-50%, -50%);
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.faq-icon::before {
+  width: 100%;
+  height: 1px;
+}
+
+.faq-icon::after {
+  width: 1px;
+  height: 100%;
+}
+
+.faq-item.open .faq-icon::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-answer {
+  display: none;
+  padding-bottom: 1.25rem;
+  color: var(--wp-ink-soft);
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-toggle-all {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: .45rem .9rem;
+  background: none;
+  border: 1px solid var(--wp-line);
+  color: var(--wp-ink-soft);
+  font-family: var(--wp-body);
+  font-size: .8rem;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.faq-toggle-all:hover {
+  border-color: var(--wp-accent);
+  color: var(--wp-accent);
+}
+
+/* -------------------------------------------------------------
+   RSVP band + footer
+   ------------------------------------------------------------- */
+
+.rsvp-band {
+  background: var(--wp-deep);
+  color: var(--wp-paper);
+  text-align: center;
+  padding: clamp(5rem, 11vw, 9rem) 1.5rem;
+  scroll-margin-top: var(--wp-nav-h);
+}
+
+.rsvp-inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.rsvp-kicker {
+  max-width: none;
+  margin: 0 0 1rem;
+  font-size: .85rem;
+  font-weight: 300;
+  letter-spacing: .12em;
+  color: var(--wp-accent-lt);
+}
+
+.rsvp-headline {
+  max-width: none;
+  margin: 0;
+  font-family: var(--wp-display);
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -.015em;
+}
+
+.wedding-footer {
+  background: var(--wp-deep);
+  color: var(--wp-paper);
+  border-top: 1px solid var(--wp-line-lt);
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.wedding-footer p {
+  max-width: none;
+  margin: 0;
+  font-size: .82rem;
+  letter-spacing: .05em;
+  opacity: .7;
+}
+
+/* -------------------------------------------------------------
+   Save the date — uses the shared nav and hero, then two
+   sections carrying the details. Type sizes come from the
+   global scale, so nothing here overrides h1/h2/body sizing.
+   ------------------------------------------------------------- */
+
+.eyebrow {
+  max-width: none;
+  margin: 0 0 1.5rem;
+  font-size: .85rem;
+  font-weight: 300;
+  letter-spacing: .18em;
+  color: var(--wp-accent);
+}
+
+.card {
+  max-width: 34rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem);
+  border: 1px solid var(--wp-line);
+  background: var(--wp-paper);
+  text-align: center;
+}
+
+.card p {
+  max-width: none;
+}
+
+.card p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* --- The painting, mounted so it reads against the dark hero.
+       Drop the padding/background if your artwork brings its own. --- */
+
+.save-date-image {
+  width: 100%;
+  max-width: 32rem;
+  margin: clamp(2.5rem, 6vw, 3.5rem) auto 0;
+  padding: clamp(.85rem, 2vw, 1.25rem);
+  background: var(--wp-paper);
+  box-shadow: 0 18px 40px -14px rgba(0, 0, 0, .45);
+}
+
+.save-date-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Where and when --- */
+
+.save-date-text {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 1.5rem;
+  background: var(--wp-sand);
+}
+
+.save-date-place {
+  margin: 0 0 1.75rem;
+}
+
+.save-date-place a {
+  color: inherit;
+  text-decoration-color: rgba(38, 100, 94, .4);
+}
+
+.save-date-place a:hover {
+  text-decoration-color: currentColor;
+}
+
+.save-date-dates {
+  max-width: none;
+  margin: 0;
+  line-height: 1.9;
+}
+
+.save-date-dates-amp {
+  display: block;
+  font-family: var(--wp-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  opacity: .55;
+  margin: .35rem 0;
+}
+
+/* --- Closing note --- */
+
+.save-date-link {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 1.5rem;
+  background: var(--wp-deep);
+  color: var(--wp-paper);
+}
+
+.save-date-link .card {
+  border-color: var(--wp-line-lt);
+  background: transparent;
+}
+
+.save-date-link h2 {
+  margin-bottom: 1.25rem;
+}
+
+.save-date-link p {
+  color: rgba(239, 237, 230, .78);
+}
+
+/* -------------------------------------------------------------
+   Save the date — shared corrections
+   ------------------------------------------------------------- */
+
+/* Hide the hamburger when the nav carries no links, so it can't
+   open an empty menu. */
+.wedding-nav:not(:has(.nav-links)) .nav-toggle {
+  display: none;
+}
+
+/* -------------------------------------------------------------
+   VERSION ONE — the painting as the hero background.
+   Add class "std-art" to <body>.
+   ------------------------------------------------------------- */
+
+.std-art .hero {
+  min-height: 92svh;
+  background-color: var(--wp-deep);
+  background-image: url('assets/photos/painting.jpg');
+  /* contain, not cover — shows the whole painting including its
+     paper border. The green shows through wherever the painting's
+     shape doesn't match the viewport. */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Tinted scrim. The watercolour is pale, so the type needs this to
+   stay legible — lighten the middle stop to show more of the
+   painting, deepen it if the names are hard to read. */
+.std-art .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 37, 35, .70) 0%,
+    rgba(14, 37, 35, .52) 45%,
+    rgba(14, 37, 35, .80) 100%
+  );
+}
+
+.std-art .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.std-art .hero-scroll {
+  z-index: 1;
+}
+
+/* The painting is a wide landscape, so on a narrow screen `contain`
+   sizes it to the width and leaves a lot of empty green above and
+   below. Shorten the hero to close that gap. */
+@media (max-width: 700px) {
+  .std-art .hero {
+    min-height: 74svh;
+  }
+}
+
+/* The painting is the background here, so the framed copy goes. */
+.std-art .save-date-image {
+  display: none;
+}
+
+.std-wide .hero {
+  min-height: auto;
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.std-wide .hero-names {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0 .6rem;
+}
+
+.std-wide .hero-name {
+  font-size: clamp(2.1rem, 6.5vw, 3.8rem);
+}
+
+.std-wide .hero-amp {
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  margin: 0;
+}
+
+.std-wide .save-date-image {
+  max-width: min(92vw, 60rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
