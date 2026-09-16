@@ -306,15 +306,21 @@ html {
   max-width: 46rem;
 }
 
+/* Names the occasion, since there are two separate celebrations.
+   Scoped with .wedding-page so it outranks ".wedding-page h3" —
+   this line is marked up as an h3, and without the extra class it
+   would inherit that rule's display face and 1.5rem size.
+
+   >>> font-size is the dial for how big "Save the date" reads. <<< */
 .wedding-page .hero-occasion {
   max-width: none;
   margin: 0 0 1.5rem;
   font-family: var(--wp-body);
-  font-size: 3rem;
+  font-size: 1.15rem;
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: .18em;
-  color: #EEF2F0;
+  color: var(--wp-accent-lt);
 }
 
 .hero-names {
@@ -329,8 +335,7 @@ html {
 
 .hero-name {
   display: block;
-  /* font-size: clamp(3.4rem, 13vw, 8rem); */
-  font-size: clamp(2.8rem, 10vw, 6rem);
+  font-size: clamp(3.4rem, 13vw, 8rem);
   letter-spacing: -.02em;
 }
 
@@ -1005,59 +1010,81 @@ html {
 }
 
 /* -------------------------------------------------------------
-   VERSION ONE — the painting as the hero background.
-   Add class "std-art" to <body>.
+   STACKED — "Save the date", then the painting, then the names.
+   Nothing overlaps, so the painting is never obscured and the
+   layout holds up on a narrow phone. Add class "std-stack".
    ------------------------------------------------------------- */
 
-.std-art .hero {
-  min-height: 92svh;
-  background-color: var(--wp-deep);
-  background-image: url('assets/photos/painting.jpg');
-  /* contain, not cover — shows the whole painting including its
-     paper border. The green shows through wherever the painting's
-     shape doesn't match the viewport. */
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.std-stack .hero {
+  min-height: 100svh;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  /* no side padding — the painting runs the full width on a phone */
+  padding: calc(var(--wp-nav-h) + 1.5rem) 0 clamp(3rem, 7vw, 5rem);
 }
 
-/* Tinted scrim. The watercolour is pale, so the type needs this to
-   stay legible — lighten the middle stop to show more of the
-   painting, deepen it if the names are hard to read. */
-.std-art .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(14, 37, 35, .70) 0%,
-    rgba(14, 37, 35, .52) 45%,
-    rgba(14, 37, 35, .80) 100%
-  );
+/* Both lines share the display face, at different sizes. */
+.std-stack .hero-occasion,
+.std-stack .hero-names {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-.std-art .hero-content {
-  position: relative;
-  z-index: 1;
+.wedding-page .std-stack-occasion {
+  margin: 0;
+  max-width: none;
+  font-family: var(--wp-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 7vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: .01em;
+  color: #EEF2F0;
 }
 
-.std-art .hero-scroll {
-  z-index: 1;
+/* Names on one line, wrapping only if the screen is very narrow. */
+.std-stack .hero-names {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0 .5rem;
 }
 
-/* The painting is a wide landscape, so on a narrow screen `contain`
-   sizes it to the width and leaves a lot of empty green above and
-   below. Shorten the hero to close that gap. */
-@media (max-width: 700px) {
-  .std-art .hero {
-    min-height: 74svh;
+.std-stack .hero-name {
+  font-size: clamp(2rem, 8.5vw, 3.6rem);
+}
+
+.std-stack .hero-amp {
+  font-size: clamp(1.4rem, 5.5vw, 2.4rem);
+  margin: 0;
+}
+
+/* The painting sits in the flow, unmounted and uncropped. */
+.std-stack .save-date-image {
+  display: block;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.std-stack .save-date-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 701px) {
+  .std-stack .save-date-image {
+    padding: 0 1.25rem;
   }
 }
-
-/* The painting is the background here, so the framed copy goes. */
-.std-art .save-date-image {
-  display: none;
-}
+/* -------------------------------------------------------------
+   VERSION TWO — the painting large, the names on one line.
+   Add class "std-wide" to <body>.
+   ------------------------------------------------------------- */
 
 .std-wide .hero {
   min-height: auto;
