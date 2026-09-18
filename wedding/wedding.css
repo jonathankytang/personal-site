@@ -7,7 +7,7 @@
 
 .wedding-page {
   /* colour */
-  --wp-deep:      #0E2523;  /* deep sea — dark fields */
+  --wp-deep:      #737a47;  /* deep sea — dark fields */
   --wp-ink:       #16302E;  /* body text */
   --wp-ink-soft:  rgba(22, 48, 46, .68);
   --wp-paper:     #EFEDE6;  /* limestone — the page */
@@ -1016,11 +1016,20 @@ html {
    ------------------------------------------------------------- */
 
 .std-stack .hero {
-  min-height: 100svh;
+  /* One spacing value used for the top padding, both gaps and the
+     bottom padding. That's what makes each line sit centred between
+     the green edge and the painting. The minimum clears the fixed
+     nav (4.75rem), so the occasion line never slides under it. */
+  --band: clamp(5.5rem, 12vw, 7rem);
+
+  /* Sized by its content, not the viewport. A 3:2 painting at full
+     width can only fill about a third of a portrait phone's height,
+     so forcing 100svh here just padded it out with green. */
+  min-height: auto;
   justify-content: center;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
+  gap: var(--band);
   /* no side padding — the painting runs the full width on a phone */
-  padding: calc(var(--wp-nav-h) + 1.5rem) 0 clamp(3rem, 7vw, 5rem);
+  padding: var(--band) 0;
 }
 
 /* Both lines share the display face, at different sizes. */
@@ -1077,8 +1086,25 @@ html {
 }
 
 @media (min-width: 701px) {
+  /* On a laptop the limit is height, not width: the painting is 3:2,
+     so making it wider also makes it taller. Tightening the band frees
+     up the room for it — still one value, so it stays centred. */
+  .std-stack .hero {
+    --band: clamp(2.5rem, 4.5vw, 4rem);
+  }
+
   .std-stack .save-date-image {
     padding: 0 1.25rem;
+    max-width: min(94vw, 64rem);
+  }
+
+  /* Never taller than the space available, so the names always stay
+     on screen. Width follows from the height, keeping it uncropped. */
+  .std-stack .save-date-image img {
+    max-height: 62svh;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 /* -------------------------------------------------------------
@@ -1111,4 +1137,48 @@ html {
 .std-wide .save-date-image {
   max-width: min(92vw, 60rem);
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* -------------------------------------------------------------
+   Scroll cue — a chevron at the foot of the hero. It's a real
+   link to #main, so tapping it works and it reaches the keyboard.
+   The bounce is switched off by the reduced-motion block above.
+   ------------------------------------------------------------- */
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--wp-paper);
+  text-decoration: none;
+  opacity: .65;
+  transition: opacity .25s ease;
+  animation: scroll-cue-bob 2.4s ease-in-out infinite;
+}
+
+.scroll-cue:hover,
+.scroll-cue:focus-visible {
+  opacity: 1;
+  color: var(--wp-paper);
+}
+
+.scroll-cue::before {
+  content: "";
+  width: .8rem;
+  height: .8rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-25%) rotate(45deg);
+}
+
+@keyframes scroll-cue-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%      { transform: translate(-50%, .35rem); }
 }
