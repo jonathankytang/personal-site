@@ -1202,6 +1202,7 @@ html {
 @keyframes scroll-cue-bob {
   0%, 100% { transform: translate(-50%, 0); }
   50%      { transform: translate(-50%, .35rem); }
+
 }
 
 /* -------------------------------------------------------------
