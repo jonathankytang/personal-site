@@ -7,7 +7,7 @@
 
 .wedding-page {
   /* colour */
-  --wp-deep:      #737a47;  /* deep sea — dark fields */
+  --wp-deep:      #6f8856;  /* deep sea — dark fields */
   --wp-ink:       #16302E;  /* body text */
   --wp-ink-soft:  rgba(22, 48, 46, .68);
   --wp-paper:     #EFEDE6;  /* limestone — the page */
@@ -1107,6 +1107,27 @@ html {
     margin: 0 auto;
   }
 }
+
+/* -------------------------------------------------------------
+   Shadow on the painting.
+
+   On the image itself, not the wrapper — the wrapper is wider than
+   the painting once the image is sized by height.
+
+   Two dials:
+     --art-shadow-size      how far it spreads (blur)
+     --art-shadow-strength  how dark it is (0 = off, 1 = solid black)
+
+   A third value, the 1.25rem, is the vertical offset: raise it to
+   make the painting look like it's floating higher off the page.
+   ------------------------------------------------------------- */
+
+.std-stack .save-date-image img {
+  --art-shadow-size: 2.5rem;
+  --art-shadow-strength: .55;
+
+  box-shadow: 0 1.25rem var(--art-shadow-size) rgba(0, 0, 0, var(--art-shadow-strength));
+}
 /* -------------------------------------------------------------
    VERSION TWO — the painting large, the names on one line.
    Add class "std-wide" to <body>.
@@ -1181,4 +1202,28 @@ html {
 @keyframes scroll-cue-bob {
   0%, 100% { transform: translate(-50%, 0); }
   50%      { transform: translate(-50%, .35rem); }
+}
+
+/* -------------------------------------------------------------
+   Save the date, phones — tighten the hero.
+
+   The band can't drop below the fixed nav's height without the
+   occasion line sliding under the monogram, so shortening the nav
+   is what unlocks the rest. Scoped to .std-stack (which sits on
+   <body>, same element as .wedding-page) so the other pages keep
+   the taller bar.
+   ------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .std-stack {
+    --wp-nav-h: 3.75rem;
+  }
+
+  .std-stack .hero {
+    --band: clamp(4.25rem, 11vw, 5.5rem);
+  }
+
+  .std-stack .nav-brand-logo {
+    height: 2.1rem;
+  }
 }
